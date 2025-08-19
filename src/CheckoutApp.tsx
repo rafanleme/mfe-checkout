@@ -65,7 +65,7 @@ function CheckoutPage() {
     return (
       <div className="wrap">
         <div className="card">
-          <h2>Pedido confirmado 🎉</h2>
+          <h2 data-testid="order-confirmed">Pedido confirmado 🎉</h2>
           <p>Número do pedido: <strong>{orderId}</strong></p>
           <p>Enviamos um e-mail com a confirmação.</p>
           <div style={{ display:'flex', gap:8 }}>
@@ -113,7 +113,7 @@ function CheckoutPage() {
 
         <div style={{ display:'flex', gap:8, marginTop:16 }}>
           <button className="btn" onClick={() => navigate('/cart')}>Voltar ao carrinho</button>
-          <button className="btn" onClick={onConfirm} disabled={!canPay}>
+          <button className="btn" onClick={onConfirm} disabled={!canPay} data-testid="button-confirm">
             {paying ? 'Processando…' : 'Confirmar pagamento'}
           </button>
         </div>
